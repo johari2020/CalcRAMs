@@ -1,0 +1,44 @@
+from math import sin, cos, tan, log, e
+
+f = input("function f(x)= ")
+a = float(input("interval from [a, b]. a="))
+b = float(input("b="))
+n = int(input("# of subintervals= "))
+
+#LRAM
+LRAM = []
+i = a
+while i <= (b-((b-a)/n)):
+    x = i
+    y = eval(f)
+    A = y*((b-a)/n)
+    LRAM.append(A)
+    i += ((b-a)/n)
+print("LRAM= ", sum(LRAM))
+print (LRAM)
+print("")
+
+#RRAM
+RRAM = []
+i = a+((b-a)/n)
+while i <= b:
+    x = i
+    y = eval(f)
+    A = y*((b-a)/n)
+    RRAM.append(A)
+    i += ((b-a)/n)
+print("RRAM= ,", sum(RRAM))
+print(RRAM)
+print("")
+
+#MRAM
+MRAM = []
+i = a+((b-a)/(2*n))
+while i <= (b-((b-a)/(2*n))):
+    x = i
+    y = eval(f)
+    A = y*((b-a)/n)
+    MRAM.append(A)
+    i += ((b-a)/n)
+print("MRAM= ", sum(MRAM))
+print(MRAM)
